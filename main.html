@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    
+    <div class="container">
+        
+        <button onclick="logout()" id="logout">Logout</button>
+        <div class="header my-4">
+            <h1>WALLET WIZARD</h1>
+        </div>
+        <div class="profile my-4">
+            <img src="./Characters_newtvseries_3D_001_2-removebg-preview.png" alt="Profile" class="rounded-circle" width="100PX">
+            <h2 id="Admin">Welcome User</h2>
+
+            
+        </div>
+
+        
+        <div class="card">
+            <div class="card-header">Add Money</div>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="incomeType" placeholder="Enter Income Type">
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" id="incomeAmount" placeholder="Enter Amount">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-success" onclick="addIncome()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">Expense</div>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="expenseType" placeholder="Expense Type">
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" id="expenseAmount" placeholder="Amount">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" onclick="addExpense()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="balance">Balance: <span id="balance">0</span> Rs</div>
+            </div>
+            <div class="col-md-6">
+                <div class="spent">Spent: <span id="spent">0</span> Rs</div>
+            </div>
+        </div>
+        <div class="text-center my-5">
+            <button id="CLEAR" class="btn btn-warning" onclick="clearAll()">Clear</button>
+        </div>
+        <div class="card mt-4">
+            <div class="card-header">Income & Expense Details</div>
+            <div class="card-body">
+                <h5>Income</h5>
+                
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Date & Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="incomeDetails"></tbody>
+                </table>
+                <h5>Expense</h5>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Date & Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenseDetails"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
